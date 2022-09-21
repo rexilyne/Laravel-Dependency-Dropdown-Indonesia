@@ -21,5 +21,5 @@ Route::get('/', function () {
 Route::controller(DependantDropdownController::class)->group(function() {
     Route::get('/provinces', 'provinces')->name('provinces');
     Route::get('/cities', 'cities')->name('cities');
-    Route::get('/districts', 'districts')->('districts');
+    Route::get('/districts', 'districts')->name('districts');
 });
