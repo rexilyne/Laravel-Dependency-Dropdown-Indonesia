@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DependantDropdownController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(DependantDropdownController::class)->group(function() {
+    Route::get('/provinces', 'provinces')->name('provinces');
+    Route::get('/cities', 'cities')->name('cities');
+    Route::get('/districts', 'districts')->('districts');
 });
