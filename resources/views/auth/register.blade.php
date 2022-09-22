@@ -154,6 +154,8 @@
         $(function () {
             $('#provinsi').on('change', function () {
                 onChangeSelect('{{ route("cities") }}', $(this).val(), 'kota');
+                $('#kecamatan').empty();
+                $('#kecamatan').append('<option>Pilih Salah Satu</option>');
             });
             $('#kota').on('change', function () {
                 onChangeSelect('{{ route("districts") }}', $(this).val(), 'kecamatan');
