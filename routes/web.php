@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DependantDropdownController;
+use App\Http\Controllers\DependentDropdownController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::controller(DependantDropdownController::class)->group(function() {
+Route::controller(DependentDropdownController::class)->group(function() {
     Route::get('/provinces', 'provinces')->name('provinces');
     Route::get('/cities', 'cities')->name('cities');
     Route::get('/districts', 'districts')->name('districts');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
